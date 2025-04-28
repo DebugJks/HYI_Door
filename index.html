@@ -969,317 +969,219 @@
 
     <!-- 문의하기 -->
 
-    <section class="contact-section">
-        <div class="container">
-            <h2 class="section-title" id="submit">문의하기</h2>
 
-            <div class="form-container">
-                <form name="contact-form" class="contact-form">
-                    <!-- 이름 입력 필드 -->
-                    <div class="form-group">
-                        <div class="input-field floating-label">
-                            <input type="text" name="이름" id="userName" required>
-                            <label for="userName">이름</label>
-                        </div>
+    <!-- 스프레드시트용 용 -->
+    <section class="contact-section" style="margin-top: 10%; background: #f8fafc; padding: 3rem 0;">
+        <h2 id="submitForm"
+            style="text-align: center; margin-bottom: 2.5rem; font-size: 1.8rem; color: #1e293b; font-weight: 500; letter-spacing: -0.5px;">
+            문의하기
+        </h2>
+        <div class="form-container" id="explore" style="max-width: 600px; margin: 0 auto; padding: 0 20px;">
+            <h2>
+                <br></br>
+            </h2>
+
+            <form  method="post" name="contact-form" class="contact-form"
+                style="background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;">
+
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <div class="input-field" style="position: relative;">
+                        <input type="text" name="연락처" id="userName" placeholder=" " required pattern="[0-9]{11}"
+                            style="width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #cbd5e1; font-size: 1rem; transition: all 0.3s; background: transparent;"
+                            onfocus="this.style.borderBottomColor='#1e40af'; this.parentElement.querySelector('label').style.transform='translateY(-24px) scale(0.85)';"
+                            onblur="if(!this.value) { this.parentElement.querySelector('label').style.transform='translateY(-12px) scale(1)'; this.style.borderBottomColor='#cbd5e1'; }">
+                        <label for="userName"
+                            style="position: absolute; left: 0; top: 12px; color: #64748b; transition: all 0.3s; pointer-events: none; font-size: 0.95rem;">전화번호</label>
+                        <span class="input-hint"
+                            style="display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 8px;">※ '-'없이 숫자만
+                            입력</span>
                     </div>
+                </div>
 
-                    <!-- 전화번호 입력 필드 -->
-                    <div class="form-group">
-                        <div class="input-field floating-label">
-                            <input type="tel" name="연락처" id="phoneNumber" pattern="[0-9]{11}" required>
-                            <label for="phoneNumber">전화번호</label>
-                            <span class="input-hint">※ '-'없이 숫자만 입력해주세요</span>
-                        </div>
+
+                <div class="form-group" style="margin-bottom: 2.5rem;">
+                    <div class="input-field" style="position: relative; padding-top: 12px;">
+                        <textarea name="문의사항" id="contents" placeholder=" " required
+                            style="width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #cbd5e1; font-size: 1rem; min-height: 120px; resize: none; transition: all 0.3s; background: transparent;"
+                            onfocus="this.style.borderBottomColor='#1e40af'; this.parentElement.querySelector('label').style.transform='translateY(-24px) scale(0.85)';"
+                            onblur="if(!this.value) { this.parentElement.querySelector('label').style.transform='translateY(-12px) scale(1)'; this.style.borderBottomColor='#cbd5e1'; }"></textarea>
+                        <label for="contents"
+                            style="position: absolute; left: 0; top: 24px; color: #64748b; transition: all 0.3s; pointer-events: none; font-size: 0.95rem;">문의사항</label>
+                        <span class="input-hint"
+                            style="display: block; font-size: 0.75rem; color: #94a3b8; margin-top: 8px;">※
+                            견적 문의 등 문의 사항을 작성해 주세요.
+                        </span>
                     </div>
+                </div>
 
 
-                    <!-- 문의내용 입력 필드 -->
-                    <div class="form-group">
-                        <div class="input-field floating-label textarea-wrapper">
-                            <textarea name="문의내용" id="contents" required></textarea>
-                            <label for="contents">문의내용</label>
-                            <span class="input-hint">※ 문의 내용을 작성해 주세요.</span>
-                        </div>
-                    </div>
+                <div class="form-actions" style="text-align: center;">
+                    <button type="submit" class="submit-btn"
+                        style="background: #1e40af; color: white; border: none; padding: 12px 28px; border-radius: 6px; font-size: 0.95rem; cursor: pointer; transition: all 0.3s; width: 100%; font-weight: 400;">
+                        <span class="btn-text">문의 보내기</span>
+                        <span class="loading-spinner" style="display: none;">⌛</span>
+                    </button>
+                </div>
+            </form>
 
-                    <!-- 제출 버튼 -->
-                    <div class="form-actions">
-                        <button type="submit" class="submit-btn">
-                            <span class="btn-text">문의 보내기</span>
-                            <div class="loading-spinner"></div>
-                        </button>
-                    </div>
-                </form>
 
-            </div>
+            <br></br>
         </div>
     </section>
 
+
+
+
     <style>
-        /* 기본 스타일 */
-        :root {
-            --primary-color: #4361ee;
-            --primary-dark: #3a56d5;
-            --text-color: #2b2d42;
-            --light-text: #8d99ae;
-            --border-color: #e2e8f0;
-            --background-light: #f8fafc;
-            --white: #ffffff;
-            --error-color: #ef233c;
-            --success-color: #2ec4b6;
-            --border-radius: 8px;
-            --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s ease;
+        /* 애니메이션 효과 */
+        .submit-btn:hover {
+            background: #1e3a8a !important;
+            box-shadow: 0 2px 8px rgba(30, 64, 175, 0.2);
         }
 
+        .learn-more:hover {
+            background: #f1f5f9 !important;
+            border-color: #94a3b8 !important;
+        }
 
-        /* 섹션 스타일 */
+        /* 입력 필드 포커스 효과 */
+        textarea:focus,
+        input:focus {
+            outline: none;
+        }
+
+        /* 로딩 상태 */
+        .submit-btn.loading .btn-text {
+            visibility: hidden;
+        }
+
+        .submit-btn.loading .loading-spinner {
+            display: inline-block;
+        }
+
         .contact-section {
-            padding: 3rem 0;
-            background-color: var(--background-light);
-            margin-top: 10%;
+            margin-top: 5% !important;
+            padding: 2rem 0 !important;
         }
 
-        .contact-section .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--text-color);
-            letter-spacing: -0.5px;
-        }
-
-        /* 폼 컨테이너 */
         .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 15px !important;
         }
 
         .contact-form {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            border: 1px solid var(--border-color);
-            margin-bottom: 1.5rem;
+            padding: 1.8rem !important;
         }
 
-        /* 입력 필드 스타일 */
-        .form-group {
-            margin-bottom: 1.5rem;
-            position: relative;
+        h2 {
+            font-size: 1.5rem !important;
         }
+    </style>
 
-        .input-field {
-            position: relative;
-        }
+<!-- 스프레드시트 -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbywjl922AWCFOoJ5ujDCmCMtD3WIoIZ4WSSZDrw95vxMUOfsi7k0bEehjq_GVU8Hmwd5g/exec';
 
-        .floating-label {
-            position: relative;
-            padding-top: 12px;
-        }
+        const form = document.forms['contact-form'];
+        const submitBtn = form.querySelector('.submit-btn');
 
-        .floating-label input,
-        .floating-label textarea {
-            width: 100%;
-            padding: 12px 0;
-            border: none;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 1rem;
-            background: transparent;
-            transition: var(--transition);
-        }
+        form.addEventListener('submit', e => {
+            e.preventDefault();
 
-        .floating-label textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
+            // 연락처 유효성 검사
+            const phoneNumber = document.getElementById("userName").value;
+            if (!phoneNumber.match(/^[0-9]{11}$/)) {
+                alert("연락처를 11자리 숫자로 입력해주세요 ('-' 제외)");
+                return;
+            }
 
-        .floating-label label {
-            position: absolute;
-            left: 0;
-            top: 24px;
-            color: var(--light-text);
-            transition: var(--transition);
-            pointer-events: none;
-            font-size: 1rem;
-        }
+            // 버튼 상태 변경
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = "처리 중...";
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
 
-        .floating-label input:focus,
-        .floating-label textarea:focus {
-            outline: none;
-            border-bottom-color: var(--primary-color);
-        }
+            // 타임스탬프 추가
+            const currentTime = new Date().toLocaleString();
+            const formData = new FormData(form);
+            formData.append("문의시간", currentTime);
 
-        .floating-label input:focus+label,
-        .floating-label textarea:focus+label,
-        .floating-label input:not(:placeholder-shown)+label,
-        .floating-label textarea:not(:placeholder-shown)+label {
-            top: 0;
-            font-size: 0.8rem;
-            color: var(--primary-color);
-        }
+            // FormData 내용 확인을 위한 로깅
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
 
-        .input-hint {
-            display: block;
-            font-size: 0.75rem;
-            color: var(--light-text);
-            margin-top: 8px;
-        }
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // CORS 이슈 해결을 위한 설정
+            })
+            .then(response => {
+                console.log('Response status:', response.status);
+                console.log('Response type:', response.type);
+                
+                // no-cors 모드에서는 response.ok를 확인할 수 없으므로 항상 성공으로 처리
+                alert("문의가 성공적으로 접수되었습니다.");
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error details:', error);
+                alert("문의 접수 중 오류가 발생했습니다. 다시 시도해주세요.");
+            })
+            .finally(() => {
+                // 버튼 상태 복원
+                submitBtn.textContent = originalText;
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
 
-        /* 셀렉트 박스 스타일 */
-        .select-wrapper {
-            position: relative;
-            padding-top: 12px;
-        }
 
-        .select-wrapper select {
-            width: 100%;
-            padding: 12px 0;
-            border: none;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 1rem;
-            background: transparent;
-            appearance: none;
-            color: var(--text-color);
-        }
-
-        .select-wrapper select:focus {
-            outline: none;
-            border-bottom-color: var(--primary-color);
-        }
-
-        .select-wrapper label {
-            position: absolute;
-            left: 0;
-            top: 0;
-            font-size: 0.8rem;
-            color: var(--primary-color);
-        }
-
-        .select-arrow {
-            position: absolute;
-            right: 0;
-            bottom: 12px;
-            width: 12px;
-            height: 12px;
-            border-right: 2px solid var(--light-text);
-            border-bottom: 2px solid var(--light-text);
-            transform: rotate(45deg);
-            pointer-events: none;
-        }
-
-        /* 버튼 스타일 */
+    <style>
+        /* 기존 스타일 유지 */
         .submit-btn {
-            width: 100%;
-            padding: 14px;
-            background-color: var(--primary-color);
-            color: var(--white);
-            border: none;
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .submit-btn:hover {
-            background-color: var(--primary-dark);
+            position: relative;
         }
 
         .loading-spinner {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
             display: none;
-            width: 18px;
-            height: 18px;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top-color: var(--white);
-            animation: spin 1s ease-in-out infinite;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
             to {
-                transform: rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
             }
         }
 
-        .learn-more-btn {
-            width: 100%;
-            padding: 14px;
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .learn-more-btn:hover {
-            background-color: rgba(67, 97, 238, 0.05);
-            border-color: var(--primary-color);
-        }
-
-        .learn-more-btn svg {
-            opacity: 0.7;
-        }
-
-        /* 모바일 반응형 스타일 */
-        @media (max-width: 768px) {
-            .contact-section {
-                padding: 2rem 0;
-                margin-top: 5%;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .contact-form {
-                padding: 1.5rem;
-            }
-
-            .form-group {
-                margin-bottom: 1.25rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .conta.ct-form {
-                padding: 1.25rem;
-            }
-
-            .floating-label input,
-            .floating-label textarea,
-            .select-wrapper select {
-                font-size: 0.9rem;
-            }
-
-            .submit-btn,
-            .learn-more-btn {
-                padding: 12px;
-                font-size: 0.9rem;
-            }
+        .submit-btn .btn-text {
+            transition: visibility 0.2s;
         }
     </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -111,64 +111,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 문의접수
 
-const form = document.forms['contact-form'];
-const submitBtn = form.querySelector('.submit-btn');
+// const form = document.forms['contact-form'];
+// const submitBtn = form.querySelector('.submit-btn');
 
-form.addEventListener('submit', e => {
-    e.preventDefault();
+// form.addEventListener('submit', e => {
+//     e.preventDefault();
 
-    // 필수 필드 확인
-    const requiredFields = ['이름', '연락처', '학생_학년', '관심_과목', '문의내용'];
-    for (const field of requiredFields) {
-        if (!form[field].value) {
-            alert(`${form[field].placeholder || field} 필드를 입력해주세요.`);
-            form[field].focus();
-            return;
-        }
-    }
+//     // 필수 필드 확인
+//     const requiredFields = ['이름', '연락처', '학생_학년', '관심_과목', '문의내용'];
+//     for (const field of requiredFields) {
+//         if (!form[field].value) {
+//             alert(`${form[field].placeholder || field} 필드를 입력해주세요.`);
+//             form[field].focus();
+//             return;
+//         }
+//     }
 
-    // 연락처 유효성 검사
-    const phoneNumber = form['연락처'].value;
-    if (!phoneNumber.match(/^[0-9]{11}$/)) {
-        alert("연락처를 11자리 숫자로 입력해주세요 ('-' 제외)");
-        return;
-    }
+//     // 연락처 유효성 검사
+//     const phoneNumber = form['연락처'].value;
+//     if (!phoneNumber.match(/^[0-9]{11}$/)) {
+//         alert("연락처를 11자리 숫자로 입력해주세요 ('-' 제외)");
+//         return;
+//     }
 
-    // 버튼 상태 변경
-    const btnText = submitBtn.querySelector('.btn-text');
-    const originalText = btnText.textContent;
-    btnText.textContent = "처리 중...";
-    submitBtn.disabled = true;
+//     // 버튼 상태 변경
+//     const btnText = submitBtn.querySelector('.btn-text');
+//     const originalText = btnText.textContent;
+//     btnText.textContent = "처리 중...";
+//     submitBtn.disabled = true;
 
-    // 데이터 전송
-    fetch(scriptURL + '?action=contact', {
-        method: 'POST',
-        body: new FormData(form)
-    })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error("서버 응답 오류");
-        })
-        .then(data => {
-            if (data.result === "success") {
-                alert("문의가 성공적으로 접수되었습니다.");
-                form.reset();
-            } else {
-                throw new Error(data.error || "문의 접수에 실패했습니다.");
-            }
-        })
-        .catch(error => {
-            alert(error.message);
-            console.error('Error!', error);
-        })
-        .finally(() => {
-            // 버튼 상태 복원
-            btnText.textContent = originalText;
-            submitBtn.disabled = false;
-        });
-});
+//     // 데이터 전송
+//     fetch(scriptURL + '?action=contact', {
+//         method: 'POST',
+//         body: new FormData(form)
+//     })
+//         .then(response => {
+//             if (response.ok) {
+//                 return response.json();
+//             }
+//             throw new Error("서버 응답 오류");
+//         })
+//         .then(data => {
+//             if (data.result === "success") {
+//                 alert("문의가 성공적으로 접수되었습니다.");
+//                 form.reset();
+//             } else {
+//                 throw new Error(data.error || "문의 접수에 실패했습니다.");
+//             }
+//         })
+//         .catch(error => {
+//             alert(error.message);
+//             console.error('Error!', error);
+//         })
+//         .finally(() => {
+//             // 버튼 상태 복원
+//             btnText.textContent = originalText;
+//             submitBtn.disabled = false;
+//         });
+// });
 
 // 드롭다운 스타일링
 document.querySelectorAll('select').forEach(select => {
@@ -182,85 +182,85 @@ document.querySelectorAll('select').forEach(select => {
 });
 
 // 공지사항 최신글 5개 불러오기
-document.addEventListener('DOMContentLoaded', function () {
-    const latestPostsTable = document.getElementById('latestPostsTable');
-    if (!latestPostsTable) return;
+// document.addEventListener('DOMContentLoaded', function () {
+//     const latestPostsTable = document.getElementById('latestPostsTable');
+//     if (!latestPostsTable) return;
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZOKq9jtYpEMQy0_jNfUATEBp7t9GDr4OCxMc9VMCKapB58eCeNOU0tPuFCCBxDq5XWQ/exec';
+//     const scriptURL = 'https://script.google.com/macros/s/AKfycbwguurzG-f38KpehmGTIWEFVTtVZEF8b2M7SLmxojP2nEkZEUb1h9ukidHb73HAZ_CfmA/exec';
 
-    function fetchLatestPosts() {
-        fetch(`${scriptURL}?boardType=review`)
-            .then(response => response.json())
-            .then(data => {
-                if (!Array.isArray(data)) throw new Error("데이터 형식 오류");
+//     function fetchLatestPosts() {
+//         fetch(`${scriptURL}?boardType=review`)
+//             .then(response => response.json())
+//             .then(data => {
+//                 if (!Array.isArray(data)) throw new Error("데이터 형식 오류");
 
-                // 최신 5개만 선택
-                const latestPosts = data.slice().reverse().slice(0, 5);
+//                 // 최신 5개만 선택
+//                 const latestPosts = data.slice().reverse().slice(0, 5);
 
-                latestPostsTable.innerHTML = '';
+//                 latestPostsTable.innerHTML = '';
 
-                latestPosts.forEach((post, index) => {
-                    const row = document.createElement('tr');
-                    row.className = 'post-title';
+//                 latestPosts.forEach((post, index) => {
+//                     const row = document.createElement('tr');
+//                     row.className = 'post-title';
 
-                    const titleCell = document.createElement('td');
-                    titleCell.className = 'title';
-                    titleCell.textContent = post["제목"] || '제목 없음';
+//                     const titleCell = document.createElement('td');
+//                     titleCell.className = 'title';
+//                     titleCell.textContent = post["제목"] || '제목 없음';
 
-                    const dateCell = document.createElement('td');
-                    dateCell.className = 'date';
-                    dateCell.textContent = post["작성일"] ? formatDate(post["작성일"]) : '날짜 없음';
+//                     const dateCell = document.createElement('td');
+//                     dateCell.className = 'date';
+//                     dateCell.textContent = post["작성일"] ? formatDate(post["작성일"]) : '날짜 없음';
 
-                    row.appendChild(titleCell);
-                    row.appendChild(dateCell);
+//                     row.appendChild(titleCell);
+//                     row.appendChild(dateCell);
 
-                    const contentRow = document.createElement('tr');
-                    contentRow.className = 'post-content';
-                    contentRow.style.display = 'none';
+//                     const contentRow = document.createElement('tr');
+//                     contentRow.className = 'post-content';
+//                     contentRow.style.display = 'none';
 
-                    const contentCell = document.createElement('td');
-                    contentCell.colSpan = 2;
-                    contentCell.innerHTML = `
-                        <div style="margin-bottom: 10px; font-weight: 500;">내용</div>
-                        <div style="white-space: pre-line;">${post["내용"] || '내용 없음'}</div>
-                    `;
+//                     const contentCell = document.createElement('td');
+//                     contentCell.colSpan = 2;
+//                     contentCell.innerHTML = `
+//                         <div style="margin-bottom: 10px; font-weight: 500;">내용</div>
+//                         <div style="white-space: pre-line;">${post["내용"] || '내용 없음'}</div>
+//                     `;
 
-                    contentRow.appendChild(contentCell);
+//                     contentRow.appendChild(contentCell);
 
-                    row.addEventListener('click', () => {
-                        const isHidden = contentRow.style.display === 'none';
-                        document.querySelectorAll('.post-content').forEach(item => item.style.display = 'none');
-                        contentRow.style.display = isHidden ? 'table-row' : 'none';
-                    });
+//                     row.addEventListener('click', () => {
+//                         const isHidden = contentRow.style.display === 'none';
+//                         document.querySelectorAll('.post-content').forEach(item => item.style.display = 'none');
+//                         contentRow.style.display = isHidden ? 'table-row' : 'none';
+//                     });
 
-                    latestPostsTable.appendChild(row);
-                    latestPostsTable.appendChild(contentRow);
-                });
-            })
-            .catch(error => {
-                latestPostsTable.innerHTML = `
-                    <tr>
-                        <td colspan="2" style="text-align: center; padding: 20px;">
-                            게시글을 불러오는 데 실패했습니다.<br>
-                            ${error.message}
-                        </td>
-                    </tr>`;
-            });
-    }
+//                     latestPostsTable.appendChild(row);
+//                     latestPostsTable.appendChild(contentRow);
+//                 });
+//             })
+//             .catch(error => {
+//                 latestPostsTable.innerHTML = `
+//                     <tr>
+//                         <td colspan="2" style="text-align: center; padding: 20px;">
+//                             게시글을 불러오는 데 실패했습니다.<br>
+//                             ${error.message}
+//                         </td>
+//                     </tr>`;
+//             });
+//     }
 
-    // 날짜 포맷 함수
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        if (isNaN(date.getTime())) return '날짜 오류';
-        const y = date.getFullYear();
-        const m = String(date.getMonth() + 1).padStart(2, '0');
-        const d = String(date.getDate()).padStart(2, '0');
-        return `${y}-${m}-${d}`;
-    }
+//     // 날짜 포맷 함수
+//     function formatDate(dateString) {
+//         const date = new Date(dateString);
+//         if (isNaN(date.getTime())) return '날짜 오류';
+//         const y = date.getFullYear();
+//         const m = String(date.getMonth() + 1).padStart(2, '0');
+//         const d = String(date.getDate()).padStart(2, '0');
+//         return `${y}-${m}-${d}`;
+//     }
 
-    // 초기 로드
-    fetchLatestPosts();
-});
+//     // 초기 로드
+//     fetchLatestPosts();
+// });
 
 
 
@@ -355,3 +355,60 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+
+
+
+
+
+
+
+// const scriptURL = 'https://script.google.com/macros/s/AKfycbwguurzG-f38KpehmGTIWEFVTtVZEF8b2M7SLmxojP2nEkZEUb1h9ukidHb73HAZ_CfmA/exec';
+
+// const form = document.forms['contact-form'];
+// const submitBtn = form.querySelector('.submit-btn');
+
+// form.addEventListener('submit', e => {
+//     e.preventDefault();
+
+//     // 연락처 유효성 검사
+//     const phoneNumber = document.getElementById("userName").value;
+//     if (!phoneNumber.match(/^[0-9]{11}$/)) {
+//         alert("연락처를 11자리 숫자로 입력해주세요 ('-' 제외)");
+//         return;
+//     }
+
+//     // 버튼 상태 변경
+//     const originalText = submitBtn.textContent;
+//     submitBtn.textContent = "처리 중...";
+//     submitBtn.classList.add('loading');
+//     submitBtn.disabled = true;
+
+//     // 타임스탬프 추가
+//     const currentTime = new Date().toLocaleString();
+//     const formData = new FormData(form);
+//     formData.append("문의시간", currentTime);
+
+//     // 데이터 전송 (handleContactSubmit 함수로 전송)
+//     fetch(scriptURL + '?action=contact', {
+//         method: 'POST',
+//         body: formData
+//     })
+//         .then(response => {
+//             if (response.ok) {
+//                 alert("문의가 성공적으로 접수되었습니다.");
+//                 form.reset();
+//             } else {
+//                 throw new Error("서버 응답 오류");
+//             }
+//         })
+//         .catch(error => {
+//             alert("문의 접수에 실패했습니다. 다시 시도해주세요.");
+//             console.error('Error!', error.message);
+//         })
+//         .finally(() => {
+//             // 버튼 상태 복원
+//             submitBtn.textContent = originalText;
+//             submitBtn.classList.remove('loading');
+//             submitBtn.disabled = false;
+//         });
+// });
