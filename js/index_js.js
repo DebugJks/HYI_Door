@@ -262,3 +262,69 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchLatestPosts();
 });
 
+
+
+// 탭 로딩바
+// 로딩바 함수
+document.addEventListener('DOMContentLoaded', function () {
+    const tabs = document.querySelectorAll('.tabA');
+    const tabContents = document.querySelectorAll('.tabA-content');
+    const progressBar = document.querySelector('.progress');
+
+    let currentTab = 0;
+    let interval;
+    const transitionTime = 3000;
+    const totalTabs = Math.min(tabs.length, tabContents.length) - 1;
+
+
+
+    // 로딩 바 업데이트
+    function updateProgressBar(tabIndex) {
+        if (totalTabs <= 1) {
+            progressBar.style.width = '100%';
+            return;
+        }
+        const progressPercent = (tabIndex / (totalTabs - 1)) * 100;
+        progressBar.style.width = `${progressPercent}%`;
+    }
+
+
+    // 탭 전환 (안전한 인덱스 처리)
+    function changeTab(index) {
+        // 인덱스 범위 검증
+        const safeIndex = Math.max(0, Math.min(index, totalTabs - 1));
+
+        tabs.forEach(tab => tab.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        tabs[safeIndex].classList.add('active');
+        tabContents[safeIndex].classList.add('active');
+        currentTab = safeIndex;
+
+        updateProgressBar(safeIndex);
+    }
+
+    // 자동 전환 (안전한 순환)
+    function nextTab() {
+        const nextIndex = (currentTab + 1) % totalTabs;
+        changeTab(nextIndex);
+    }
+
+    // 자동 슬라이드 시작
+    function startAutoSlide() {
+        clearInterval(interval);
+        interval = setInterval(nextTab, transitionTime);
+    }
+
+    // 탭 클릭 이벤트
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            changeTab(index);
+            startAutoSlide();
+        });
+    });
+
+    // 초기화
+    changeTab(0); // 첫 번째 탭 활성화
+    startAutoSlide();
+});
