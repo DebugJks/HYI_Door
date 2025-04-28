@@ -265,42 +265,43 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // 탭 로딩바
+
 // 로딩바 함수
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.tabA');
     const tabContents = document.querySelectorAll('.tabA-content');
     const progressBar = document.querySelector('.progress');
-
+    
     let currentTab = 0;
     let interval;
     const transitionTime = 3000;
-    const totalTabs = Math.min(tabs.length, tabContents.length) - 1;
+    const totalTabs = Math.min(tabs.length, tabContents.length) -1;
 
 
 
     // 로딩 바 업데이트
     function updateProgressBar(tabIndex) {
-        if (totalTabs <= 1) {
-            progressBar.style.width = '100%';
-            return;
-        }
-        const progressPercent = (tabIndex / (totalTabs - 1)) * 100;
-        progressBar.style.width = `${progressPercent}%`;
+    if (totalTabs <= 1) {
+        progressBar.style.width = '100%';
+        return;
     }
+    const progressPercent = (tabIndex / (totalTabs - 1)) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+}
 
 
     // 탭 전환 (안전한 인덱스 처리)
     function changeTab(index) {
         // 인덱스 범위 검증
         const safeIndex = Math.max(0, Math.min(index, totalTabs - 1));
-
+        
         tabs.forEach(tab => tab.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-
+        
         tabs[safeIndex].classList.add('active');
         tabContents[safeIndex].classList.add('active');
         currentTab = safeIndex;
-
+        
         updateProgressBar(safeIndex);
     }
 
@@ -328,3 +329,29 @@ document.addEventListener('DOMContentLoaded', function () {
     changeTab(0); // 첫 번째 탭 활성화
     startAutoSlide();
 });
+
+
+// 햄버거 함수
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mainMenu = document.querySelector('.main-menu');
+
+    // 햄버거 메뉴 토글
+    menuToggle.addEventListener('click', function () {
+        this.classList.toggle('open');
+        mainMenu.classList.toggle('active');
+    });
+
+    // 서브메뉴 토글 (모바일에서)
+    const menuItems = document.querySelectorAll('.menu-item-has-children');
+    if (window.innerWidth <= 768) {
+        menuItems.forEach(item => {
+            const link = item.querySelector('a');
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                item.classList.toggle('active');
+            });
+        });
+    }
+});
+
