@@ -8,18 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/indexStyle.css">
 
-
     <!-- board랑 index_js scriptURL Door에 맞게 수정해야함 -->
 
 </head>
 
 <body>
-
-
-
-
-
-
 
 
     <!-- 헤더 -->
@@ -28,10 +21,10 @@
             <a href="index.html" class="logo">한양<span>도어</span></a>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="#program">회사소개</a></li>
-                    <li><a href="#teachers">시공사례</a></li>
+                    <!-- <li><a href="#program">회사소개</a></li>
+                    <li><a href="#teachers">시공사례</a></li> -->
                     <!-- <li><a href="board.html">공지사항</a></li> -->
-                    <li><a href="#submit">문의하기</a></li>
+                    <li><a href="#submitForm">문의하기</a></li>
                 </ul>
             </nav>
             <div class="mobile-menu-btn" id="mobileMenuBtn">
@@ -69,6 +62,7 @@
                 <span>#깔끔한 마감</span>
                 <span>#인테리어</span>
                 <span>#중문</span>
+                <span>#모던</span>
 
                 <!-- 복제 내용 (원본과 동일) -->
                 <span>#철제도어</span>
@@ -76,6 +70,7 @@
                 <span>#깔끔한 마감</span>
                 <span>#인테리어</span>
                 <span>#중문</span>
+                <span>#모던</span>
             </div>
         </div>
     </section>
@@ -94,7 +89,7 @@
         <button class="tabA">중문</button>
         <button class="tabA">방문</button>
         <button class="tabA">흰둥이도어</button>
-        <button class="tabA">키즈도어</button>
+        <!-- <button class="tabA">키즈도어</button> -->
     </div>
     <section class="sectionToAuto" style="margin-top: 3%;">
 
@@ -130,197 +125,11 @@
             <p class="description">도어 설명4</p>
         </div>
 
-        <div class="tabA-content" id="tab5">
-            <div class="image-container">
-                <img src="image/tab_3.jpg" alt="탭 5 이미지">
-                <!-- <button class="link-button">더보기 →</button> -->
-            </div>
-            <p class="description">도어 설명5</p>
-        </div>
+
         <div class="loading-bar">
             <div class="progress"></div>
         </div>
     </section>
-
-    <style>
-        /* 로딩바 있는 탭 */
-
-        .sectionToAuto {
-            margin-top: 5%;
-            position: relative;
-            background-color: rgb(191, 178, 119);
-            padding: 30px 15px;
-            overflow: hidden;
-            height: auto;
-        }
-
-        /* 탭 버튼 스타일 (모바일 우선) */
-        .tabAs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
-            padding: 0 10px;
-            overflow-x: auto;
-            /* 매우 좁은 화면에서 스크롤 허용 */
-            -webkit-overflow-scrolling: touch;
-            white-space: nowrap;
-            /* 가로 정렬 유지 */
-        }
-
-        .tabA {
-            background: none;
-            border: none;
-            font-size: 14px;
-            color: #333;
-            cursor: pointer;
-            padding: 5px 0;
-            flex-shrink: 0;
-            /* 좁은 화면에서 줄어들지 않게 */
-        }
-
-        .tabA.active {
-            font-weight: bold;
-            color: #000;
-        }
-
-        /* 콘텐츠 영역 */
-        .tabA-content {
-            display: none;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* 탭 컨테이너 스타일 */
-        .tabA-container {
-            position: relative;
-            z-index: 100;
-            background: rgb(255, 255, 255);
-            /* 배경색 제거를 위해 흰색 설정 */
-            padding-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        /* 섹션 스타일 수정 */
-        .sectionToAuto {
-            position: relative;
-            padding: 40px 15px;
-            /* 상단 패딩 줄임 */
-            margin-top: -15px;
-            /* 탭과의 겹침 조정 */
-            z-index: 1;
-        }
-
-        .tabA-content.active {
-            display: block;
-        }
-
-        .image-container {
-            position: relative;
-            width: 100%;
-            margin-top: -20px;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 3px;
-        }
-
-        .link-button {
-            position: absolute;
-            left: 10px;
-            bottom: 10px;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            text-decoration: underline;
-            padding: 0;
-        }
-
-        .description {
-            margin-top: 10px;
-            text-align: center;
-            font-size: 14px;
-            color: #333;
-            line-height: 1.4;
-            padding: 0 5px;
-        }
-
-        /* 로딩 바 */
-        .loading-bar {
-            width: 100%;
-            height: 3px;
-            background-color: rgba(255, 255, 255, 0.3);
-            margin-top: 30px;
-        }
-
-        .progress {
-            height: 100%;
-            width: 0;
-            background-color: #fff;
-            transition: width 0.3s ease;
-        }
-
-        /* 데스크톱 대응 */
-        @media (min-width: 768px) {
-            .sectionToAuto {
-                padding: 80px 20px 60px;
-                /* background-color: white; */
-            }
-
-            .tab-container {
-                padding: 15px 10px 0;
-                overflow-x: auto;
-            }
-
-            /* .tabAs {
-      gap: 30px;
-      padding: 0;
-      overflow-x: visible;
-  } */
-
-            .tabA {
-                font-size: 16px;
-                padding: 5px 10px;
-            }
-
-            .image-container {
-                margin-top: -40px;
-            }
-
-            .link-button {
-                font-size: 16px;
-            }
-
-            .description {
-                font-size: 16px;
-                margin-top: 20px;
-            }
-
-            .loading-bar {
-                margin-left: 25%;
-                height: 4px;
-                width: 50%;
-                margin-top: 40px;
-            }
-        }
-    </style>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -403,11 +212,11 @@
         document.addEventListener('DOMContentLoaded', function () {
             // 이미지 배열 (실제 사용시 이미지 경로로 변경)
             const images = [
-                'image/g1.jpg',
-                'image/banner_test.png',
-                'image/index_3.png',
-                'image/index_4.jpg',
-                'image/gtab_13.png'
+                'image/리모델링1.png',
+                'image/리모델링2.png',
+                'image/리모델링3.png',
+                'image/tab_3.jpg',
+                'image/제품2.jpg'
             ];
 
             const sliderTrack = document.querySelector('.slider-track');
@@ -732,12 +541,7 @@
 
 
 
-
-
-
-
-
-<!-- 
+    <!-- 
     <section id="latestPostsSection">
         <h2>공지사항</h2>
         <table id="latestPostsTable">
@@ -965,10 +769,106 @@
 
 
 
+    <!-- 큰 탭2 -->
+    <div class="tab2-container">
+        <ul class="tab2-menu">
+            <li class="tab2-item active">Classic</li>
+            <li class="tab2-item">Classic</li>
+            <!-- <li class="tab2-item">철수</li> -->
+        </ul>
+
+
+        <div class="tab2-content active">
+            <div class="image-layout">
+                <div class="left-image">
+                    <a class="fade-element">
+                        <img src="image/gtab_11.jpg" alt="큰 이미지">
+                    </a>
+                </div>
+                <div class="right-image">
+                    <a class="fade-element">
+                        <img src="image/gtab_12.png" alt="작은 이미지">
+                    </a>
+                </div>
+                <div class="large-text">Classic Style</div>
+            </div>
+            <div class="center-image">
+                <a class="fade-element">
+                    <img src="image/gtab_13.png">
+                </a>
+            </div>
+
+            <!-- 이미지 설명 -->
+            <div class="image-description">
+                <!-- <p>다양한 형태의 주거공간에서 잘 어울리는 모던 스타일을 만나보세요</p> -->
+            </div>
+        </div>
+
+        <!-- 클래식-->
+        <div class="tab2-content">
+            <div class="image-layout">
+                <!-- 왼쪽 큰 이미지 -->
+                <div class="left-image">
+                    <a class="fade-element">
+                        <img src="image/tab_21.png" alt="큰 이미지">
+                    </a>
+                </div>
+                <!-- 오른쪽 작은 이미지 -->
+                <div class="right-image">
+                    <a class="fade-element">
+                        <img src="image/tab_22.png" alt="작은 이미지">
+                    </a>
+                </div>
+                <!-- 중간 큰 텍스트 -->
+                <div class="large-text">Classic Style</div>
+            </div>
+            <!-- 아래 중앙 이미지 -->
+            <div class="center-image">
+                <a class="fade-element">
+                    <img src="image/tab_23.png">
+                </a>
+            </div>
+
+            <!-- 이미지 설명 -->
+            <div class="image-description">
+                <!-- <p>영림 어쩌구 저쩌구입니다</p> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="tab2-content">
+        <!-- 탭 3 내용 -->
+    </div>
+    </div>
+
+
+    <script>
+        // 탭 기능 구현
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabItems = document.querySelectorAll('.tab2-item');
+            const tabContents = document.querySelectorAll('.tab2-content');
+
+            tabItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    // 모든 탭 비활성화
+                    tabItems.forEach(tab => tab.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // 클릭한 탭 활성화
+                    item.classList.add('active');
+                    tabContents[index].classList.add('active');
+                });
+            });
+        });
+    </script>
+
+
+
+
     <!-- 문의하기 -->
 
 
-    <!-- 스프레드시트용 용 -->
+    <!-- 스프레드시트용 -->
     <section class="contact-section" style="margin-top: 10%; background: #f8fafc; padding: 3rem 0;">
         <h2 id="submitForm"
             style="text-align: center; margin-bottom: 2.5rem; font-size: 1.8rem; color: #1e293b; font-weight: 500; letter-spacing: -0.5px;">
@@ -979,7 +879,7 @@
                 <br></br>
             </h2>
 
-            <form  method="post" name="contact-form" class="contact-form"
+            <form method="post" name="contact-form" class="contact-form"
                 style="background: white; padding: 2.5rem; border-radius: 8px; box-shadow: 0 2px 12px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;">
 
                 <div class="form-group" style="margin-bottom: 2rem;">
@@ -1075,7 +975,7 @@
         }
     </style>
 
-<!-- 스프레드시트 -->
+    <!-- 스프레드시트 -->
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbywjl922AWCFOoJ5ujDCmCMtD3WIoIZ4WSSZDrw95vxMUOfsi7k0bEehjq_GVU8Hmwd5g/exec';
 
@@ -1113,24 +1013,24 @@
                 body: formData,
                 mode: 'no-cors' // CORS 이슈 해결을 위한 설정
             })
-            .then(response => {
-                console.log('Response status:', response.status);
-                console.log('Response type:', response.type);
-                
-                // no-cors 모드에서는 response.ok를 확인할 수 없으므로 항상 성공으로 처리
-                alert("문의가 성공적으로 접수되었습니다.");
-                form.reset();
-            })
-            .catch(error => {
-                console.error('Error details:', error);
-                alert("문의 접수 중 오류가 발생했습니다. 다시 시도해주세요.");
-            })
-            .finally(() => {
-                // 버튼 상태 복원
-                submitBtn.textContent = originalText;
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
-            });
+                .then(response => {
+                    console.log('Response status:', response.status);
+                    console.log('Response type:', response.type);
+
+                    // no-cors 모드에서는 response.ok를 확인할 수 없으므로 항상 성공으로 처리
+                    alert("문의가 성공적으로 접수되었습니다.");
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error details:', error);
+                    alert("문의 접수 중 오류가 발생했습니다. 다시 시도해주세요.");
+                })
+                .finally(() => {
+                    // 버튼 상태 복원
+                    submitBtn.textContent = originalText;
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                });
         });
     </script>
 
@@ -1185,174 +1085,168 @@
 
 
 
-<!-- 한양창호 갤러리 -->
+    <!-- 한양창호 갤러리 -->
 
-<section class="gallery-section" style="margin-bottom: 5%; margin-top: 10%;">
-    <div class="gallery-header">
-        <h2 class="section-title" style="text-align: center;">한양도어 갤러리</h2>
-        <p class="section-subtitle">우리의 프리미엄 제품과 시공 사례를 확인해보세요. 최고의 품질과 디자인을 경험할 수 있습니다.</p>
-    </div>
-    
-    <!-- 갤러리 필터 -->
-    <div class="gallery-filter">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="Products">제품</button>
-        <button class="filter-btn" data-filter="Projects">리모델링</button>
-        <button class="filter-btn" data-filter="Reviews">후기</button>
-        <button class="filter-btn" data-filter="Events">이벤트</button>
-    </div>
-    
-    <!-- 갤러리 그리드 -->
-    <div class="gallery-container">
-        <!-- 갤러리 아이템 1 -->
-        <div class="gallery-item" data-category="Products">
-            <div class="gallery-category">제품</div>
-            <img src="images/Abs디오.jpg" alt="Modern Door" class="gallery-image">
-            <div class="gallery-overlay">
-                <h3 class="gallery-title">Minimalist Door Series</h3>
-                <p class="gallery-desc">Contemporary design with premium materials for modern homes</p>
-            </div>
-            <div class="gallery-zoom">
-                <i class="fas fa-search-plus"></i>
-            </div>
+    <section class="gallery-section" style="margin-bottom: 5%; margin-top: 5%;">
+        <div class="gallery-header">
+            <h2 class="section-title" style="text-align: center; font-weight: bold;">한양도어 갤러리</h2>
+            <p class="section-subtitle">우리의 프리미엄 제품과 시공 사례를 확인해보세요. 최고의 품질과 디자인을 경험할 수 있습니다.</p>
         </div>
-        
-        <!-- 갤러리 아이템 2 -->
-        <div class="gallery-item" data-category="Projects">
-            <div class="gallery-category">리모델링</div>
-            <img src="images/g1.jpg" alt="Apartment Project" class="gallery-image">
-            <div class="gallery-overlay">
-                <h3 class="gallery-title">Luxury Apartment</h3>
-                <p class="gallery-desc">High-end apartment complex with custom door solutions</p>
-            </div>
-            <div class="gallery-zoom">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-        
-        <!-- 갤러리 아이템 3 -->
-        <div class="gallery-item" data-category="Products">
-            <div class="gallery-category">Product</div>
-            <img src="images/g2.jpg" alt="Security Door" class="gallery-image">
-            <div class="gallery-overlay">
-                <h3 class="gallery-title">Security Plus</h3>
-                <p class="gallery-desc">Advanced security features without compromising on design</p>
-            </div>
-            <div class="gallery-zoom">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-        
-        <!-- 갤러리 아이템 4 -->
-        <div class="gallery-item" data-category="Reviews">
-            <div class="gallery-category">Review</div>
-            <img src="images/g2.jpg" alt="Customer Review" class="gallery-image">
-            <div class="gallery-overlay">
-                <h3 class="gallery-title">Happy Homeowners</h3>
-                <p class="gallery-desc">"The quality exceeded our expectations. Perfect finish!"</p>
-            </div>
-            <div class="gallery-zoom">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-        
-        <!-- 갤러리 아이템 5 -->
-        <div class="gallery-item" data-category="Projects">
-            <div class="gallery-category">리모델링</div>
-            <img src="images/g2.jpg" alt="Villa Project" class="gallery-image">
-            <div class="gallery-overlay">
-                <h3 class="gallery-title">Modern Villa</h3>
-                <p class="gallery-desc">Custom designed doors for a luxury villa in Seoul</p>
-            </div>
-            <div class="gallery-zoom">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-        
-        <!-- 갤러리 아이템 6 -->
-        <div class="gallery-item" data-category="Events">
-            <div class="gallery-category">Event</div>
-            <img src="images/g2.jpg" alt="Product Launch" class="gallery-image">
-            <div class="gallery-overlay">
-                <h3 class="gallery-title">New Collection</h3>
-                <p class="gallery-desc">Launching our 2023 designer series with special offers</p>
-            </div>
-            <div class="gallery-zoom">
-                <i class="fas fa-search-plus"></i>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- 이미지 모달 -->
-<div id="imageModal" class="modal">
-<span class="close-btn">&times;</span>
-<div class="modal-content">
-    <img id="modalImage" class="modal-image" src="" alt="">
-    <div id="modalCaption" class="modal-caption">
-        <h3 id="modalTitle"></h3>
-        <p id="modalDesc"></p>
-    </div>
-</div>
-</div>
+        <!-- 갤러리 필터 -->
+        <div class="gallery-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Products">제품</button>
+            <button class="filter-btn" data-filter="Projects">리모델링</button>
+            <button class="filter-btn" data-filter="Reviews">후기</button>
+            <button class="filter-btn" data-filter="Events">이벤트</button>
+        </div>
 
-<script>
-// 갤러리 필터 기능 (수정된 버전)
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        document.querySelector('.filter-btn.active').classList.remove('active');
-        this.classList.add('active');
-        
-        const filterValue = this.getAttribute('data-filter');
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        
-        galleryItems.forEach(item => {
-            const itemCategory = item.getAttribute('data-category');
-            
-            if (filterValue === 'all' || itemCategory === filterValue) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
+        <!-- 갤러리 그리드 -->
+        <div class="gallery-container">
+            <!-- 갤러리 아이템 1 -->
+            <div class="gallery-item" data-category="Projects">
+                <div class="gallery-category">리모델링</div>
+                <img src="image/리모델링1.png" alt="Apartment Project" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">32평 아파트 인테리어</h3>
+                    <p class="gallery-desc">감성 숙소같은 32평 아파트 인테리어</p>
+                </div>
+                <div class="gallery-zoom">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="Projects">
+                <div class="gallery-category">리모델링</div>
+                <img src="image/리모델링2.png" alt="Apartment Project" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">안정감을 주는 인테리어</h3>
+                    <p class="gallery-desc">누구든 초대하고 싶은 완성된 공간</p>
+                </div>
+                <div class="gallery-zoom">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="Projects">
+                <div class="gallery-category">리모델링</div>
+                <img src="image/리모델링3.png" alt="Apartment Project" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">46평 아파트 현관</h3>
+                    <p class="gallery-desc">아이를 위한 카페같은 공부방 인테리어</p>
+                </div>
+                <div class="gallery-zoom">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="Product">
+                <div class="gallery-category">제품</div>
+                <img src="image/제품1.jpg" alt="Customer Review" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">YD-1720 샐리</h3>
+                    <p class="gallery-desc">중문 / 양개중문</p>
+                </div>
+                <div class="gallery-zoom">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="Product">
+                <div class="gallery-category">제품</div>
+                <img src="image/제품2.jpg" alt="Customer Review" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">YW-17 브리아</h3>
+                    <p class="gallery-desc">중문 / 양개중문 여닫이형 중문</p>
+                </div>
+                <div class="gallery-zoom">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="Product">
+                <div class="gallery-category">제품</div>
+                <img src="image/제품3.png" alt="Customer Review" class="gallery-image">
+                <div class="gallery-overlay">
+                    <h3 class="gallery-title">YA-1020 스코프</h3>
+                    <p class="gallery-desc">도어 / ABS도어 스코프</p>
+                </div>
+                <div class="gallery-zoom">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+    </section>
+
+    <!-- 이미지 모달 -->
+    <div id="imageModal" class="modal">
+        <span class="close-btn">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div id="modalCaption" class="modal-caption">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 갤러리 필터 기능 (수정된 버전)
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                this.classList.add('active');
+
+                const filterValue = this.getAttribute('data-filter');
+                const galleryItems = document.querySelectorAll('.gallery-item');
+
+                galleryItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+
+                    if (filterValue === 'all' || itemCategory === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 모달 기능
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const closeBtn = document.querySelector('.close-btn');
+
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function () {
+                const imgSrc = this.querySelector('img').src;
+                const title = this.querySelector('.gallery-title').textContent;
+                const desc = this.querySelector('.gallery-desc').textContent;
+
+                modalImg.src = imgSrc;
+                modalTitle.textContent = title;
+                modalDesc.textContent = desc;
+
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeBtn.addEventListener('click', function () {
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        });
+
+        // 모달 외부 클릭 시 닫기
+        window.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto';
             }
         });
-    });
-});
-
-// 모달 기능
-const modal = document.getElementById('imageModal');
-const modalImg = document.getElementById('modalImage');
-const modalTitle = document.getElementById('modalTitle');
-const modalDesc = document.getElementById('modalDesc');
-const closeBtn = document.querySelector('.close-btn');
-
-document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', function() {
-        const imgSrc = this.querySelector('img').src;
-        const title = this.querySelector('.gallery-title').textContent;
-        const desc = this.querySelector('.gallery-desc').textContent;
-        
-        modalImg.src = imgSrc;
-        modalTitle.textContent = title;
-        modalDesc.textContent = desc;
-        
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    });
-});
-
-closeBtn.addEventListener('click', function() {
-    modal.classList.remove('show');
-    document.body.style.overflow = 'auto';
-});
-
-// 모달 외부 클릭 시 닫기
-window.addEventListener('click', function(e) {
-    if (e.target === modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = 'auto';
-    }
-});
-</script>
+    </script>
 
 
 
@@ -1370,14 +1264,14 @@ window.addEventListener('click', function(e) {
             <div class="footer-container">
                 <div class="footer-info">
                     <div class="footer-logo">한양<span>도어</span></div>
-                    <p>어쩌구 소개</p>
+                    <!-- <p>어쩌구 소개</p> -->
                 </div>
 
                 <div class="footer-contact">
                     <h3>연락처</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 경기도 화성시 어딘가</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 경기도 화성시 팔탄면 푸른들판로 496</p>
                     <p><i class="fas fa-phone"></i> 010-4010-2363</p>
-                    <p><i class="fas fa-envelope"></i> E-mail.com</p>
+                    <!-- <p><i class="fas fa-envelope"></i> E-mail.com</p> -->
                 </div>
             </div>
             <div class="copyright">
@@ -1393,3 +1287,122 @@ window.addEventListener('click', function(e) {
 </body>
 
 </html>
+
+
+    <!-- 이벤트 팝업 -->
+    <!-- <div class="popup-overlay" id="popup">
+        <div class="popup-content">
+            <img src="image/event.png" alt="이벤트 이미지" class="popup-image">
+            <div class="popup-buttons">
+                <button id="close-btn">닫기</button>
+                <button id="today-close-btn">오늘 하루 안 보기</button>
+            </div>
+        </div>
+    </div>
+    <style>
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .popup-content {
+            /* background: #fff; */
+            padding: 20px;
+            border-radius: 2px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+
+        .popup-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .popup-buttons {
+            margin-top: 1%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .popup-buttons button {
+            flex: 1;
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            background: #333;
+            color: white;
+            border-radius: 2px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .popup-buttons button:hover {
+            background: #555;
+        }
+
+        /* 모바일 대응 */
+        @media (max-width: 480px) {
+            .popup-content {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .popup-buttons button {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <script>
+        // 쿠키 설정 함수
+        function setCookie(name, value, hours) {
+            const d = new Date();
+            d.setTime(d.getTime() + (hours * 60 * 60 * 1000));
+            document.cookie = `${name}=${value}; expires=${d.toUTCString()}; path=/`;
+        }
+
+        // 쿠키 가져오기 함수
+        function getCookie(name) {
+            const cookies = document.cookie.split('; ');
+            for (let i = 0; i < cookies.length; i++) {
+                const [cookieName, cookieValue] = cookies[i].split('=');
+                if (cookieName === name) {
+                    return cookieValue;
+                }
+            }
+            return null;
+        }
+
+        // 팝업 제어
+        document.addEventListener('DOMContentLoaded', function () {
+            const popup = document.getElementById('popup');
+            const closeBtn = document.getElementById('close-btn');
+            const todayCloseBtn = document.getElementById('today-close-btn');
+
+            if (!getCookie('popupClosed')) {
+                popup.style.display = 'flex';
+            }
+
+            closeBtn.addEventListener('click', function () {
+                popup.style.display = 'none';
+            });
+
+            todayCloseBtn.addEventListener('click', function () {
+                setCookie('popupClosed', 'true', 24); // 24시간 동안 저장
+                popup.style.display = 'none';
+            });
+        });
+
+    </script> -->

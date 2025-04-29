@@ -275,7 +275,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentTab = 0;
     let interval;
     const transitionTime = 3000;
-    const totalTabs = Math.min(tabs.length, tabContents.length) -1;
+    const totalTabs = Math.min(tabs.length, tabContents.length);
+
 
 
 

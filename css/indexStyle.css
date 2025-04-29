@@ -363,8 +363,8 @@ footer {
     overflow: hidden;
     background: #ffffff;
     padding: 1rem 0;
-    border-top: 4px solid #ff4d4d;
-    border-bottom: 4px solid #ff4d4d;
+    border-top: 4px solid #3c7dff;
+    border-bottom: 4px solid #3c7dff;
     position: relative;
 }
 
@@ -382,7 +382,7 @@ footer {
     display: inline-block;
     margin-right: 4rem;
     font-weight: bold;
-    color: #e60000;
+    color: #3c7dff;
     font-size: 1.2rem;
     letter-spacing: 1px;
     text-shadow: 1px 1px 0 #fff5f5;
@@ -1211,5 +1211,344 @@ footer {
 
     .gallery-container {
         grid-template-columns: 1fr;
+    }
+}
+
+
+/* tab2 스타일 */
+
+/* 중간 tab2 */
+/* 탭 메뉴 스타일 */
+.tab2-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tab2-menu {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin-bottom: 40px;
+    /* border-bottom: 1px solid #eee; */
+    justify-content: flex-end;
+    /* 탭을 오른쪽으로 정렬 */
+}
+
+.tab2-item {
+    list-style: none;
+    padding: 10px 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tab2-item:hover,
+.tab2-item.active {
+    transform: scale(1.05);
+}
+
+.tab2-item:hover::after,
+.tab2-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+}
+
+/* 탭 내용 스타일 */
+.tab2-content {
+    display: none;
+}
+
+.tab2-content.active {
+    display: block;
+}
+
+/* 이미지 레이아웃 */
+.image-layout {
+    position: relative;
+    display: flex;
+    margin-bottom: 80px;
+}
+
+.left-image {
+    width: 40%;
+    margin-left: 10%;
+}
+
+.right-image {
+    width: 35%;
+    align-self: flex-end;
+    margin-bottom: 10%;
+    margin-left: 10%;
+}
+
+.center-image {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+}
+
+.image-description {
+    text-align: center;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+/* 중간 큰 텍스트 */
+.large-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 72px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.555);
+    z-index: 10;
+    /* top: 50%; */
+    margin-top: 40%;
+    white-space: nowrap;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+    .tab2-menu {
+        display: flex;
+        gap: 30px;
+        padding: 0;
+        margin-bottom: 40px;
+        /* border-bottom: 1px solid #eee; */
+        justify-content: flex-end;
+        /* 탭을 오른쪽으로 정렬 */
+    }
+
+    .tab2-item {
+        font-size: 16px;
+        padding: 8px 3px;
+    }
+
+    .image-layout {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+
+    .left-image {
+        width: 85%;
+        margin-left: 0;
+        margin-bottom: 20px;
+        align-self: flex-start;
+    }
+
+    .right-image {
+        width: 85%;
+        margin-top: 0;
+        margin-left: auto;
+        align-self: flex-end;
+    }
+
+    .center-image {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+    .large-text {
+        font-size: 48px;
+        position: relative;
+        left: auto;
+        transform: none;
+        text-align: center;
+        margin: 30px 0;
+        color: rgba(0, 0, 0, 0.5);
+        top: auto;
+        white-space: normal;
+    }
+
+    .image-description {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+/* 로딩바 있는 탭 */
+
+.sectionToAuto {
+    margin-top: 5%;
+    position: relative;
+    background-color: #B3885E;
+    padding: 30px 15px;
+    overflow: hidden;
+    height: auto;
+}
+
+/* 탭 버튼 스타일 (모바일 우선) */
+.tabAs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+    overflow-x: auto;
+    /* 매우 좁은 화면에서 스크롤 허용 */
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    /* 가로 정렬 유지 */
+}
+
+.tabA {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    padding: 5px 0;
+    flex-shrink: 0;
+    /* 좁은 화면에서 줄어들지 않게 */
+}
+
+.tabA.active {
+    font-weight: bold;
+    color: #000;
+}
+
+/* 콘텐츠 영역 */
+.tabA-content {
+    display: none;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* 탭 컨테이너 스타일 */
+.tabA-container {
+    position: relative;
+    z-index: 100;
+    background: rgb(255, 255, 255);
+    /* 배경색 제거를 위해 흰색 설정 */
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 섹션 스타일 수정 */
+.sectionToAuto {
+    position: relative;
+    padding: 40px 15px;
+    /* 상단 패딩 줄임 */
+    margin-top: -15px;
+    /* 탭과의 겹침 조정 */
+    z-index: 1;
+}
+
+.tabA-content.active {
+    display: block;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    margin-top: -20px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+}
+
+.link-button {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+}
+
+.description {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+    padding: 0 5px;
+}
+
+/* 로딩 바 */
+.loading-bar {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-top: 30px;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+/* 데스크톱 대응 */
+@media (min-width: 768px) {
+    .sectionToAuto {
+        padding: 80px 20px 60px;
+        /* background-color: white; */
+    }
+
+    .tab-container {
+        padding: 15px 10px 0;
+        overflow-x: auto;
+    }
+
+    /* .tabAs {
+      gap: 30px;
+      padding: 0;
+      overflow-x: visible;
+  } */
+
+    .tabA {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+    .image-container {
+        margin-top: -40px;
+    }
+
+    .link-button {
+        font-size: 16px;
+    }
+
+    .description {
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .loading-bar {
+        margin-left: 25%;
+        height: 4px;
+        width: 50%;
+        margin-top: 40px;
     }
 }
