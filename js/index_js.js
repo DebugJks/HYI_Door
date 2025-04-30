@@ -39,19 +39,38 @@ window.addEventListener("scroll", () => {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // iOS 스크롤 방지
 });
 
-// 섹션 겹친 이미지 펼쳐지는 기능
+// 첫번째 탭 이미지 4개
+// 탭 메뉴 기능
 document.addEventListener('DOMContentLoaded', function () {
-    const section = document.querySelector('.section-value');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                section.classList.add('active');
-            }
-        });
-    }, { threshold: 0.2 });
+    const tab22Btns = document.querySelectorAll('.tab22-btn');
 
-    observer.observe(section);
+    tab22Btns.forEach(btn => {
+        btn.addEventListener('click', function () {
+            // 모든 탭 버튼과 콘텐츠 비활성화
+            document.querySelectorAll('.tab22-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab22-content').forEach(c => c.classList.remove('active'));
+
+            // 현재 클릭한 탭 활성화
+            this.classList.add('active');
+            const tab22Id = this.getAttribute('data-tab22');
+            document.getElementById(tab22Id).classList.add('active');
+        });
+    });
 });
+
+// 섹션 겹친 이미지 펼쳐지는 기능
+// document.addEventListener('DOMContentLoaded', function () {
+//     const section = document.querySelector('.section-value');
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 section.classList.add('active');
+//             }
+//         });
+//     }, { threshold: 0.2 });
+
+//     observer.observe(section);
+// });
 
 
 // // fade 애니메이션
@@ -267,11 +286,11 @@ document.querySelectorAll('select').forEach(select => {
 // 탭 로딩바
 
 // 로딩바 함수
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const tabs = document.querySelectorAll('.tabA');
     const tabContents = document.querySelectorAll('.tabA-content');
     const progressBar = document.querySelector('.progress');
-    
+
     let currentTab = 0;
     let interval;
     const transitionTime = 3000;
@@ -282,27 +301,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 로딩 바 업데이트
     function updateProgressBar(tabIndex) {
-    if (totalTabs <= 1) {
-        progressBar.style.width = '100%';
-        return;
+        if (totalTabs <= 1) {
+            progressBar.style.width = '100%';
+            return;
+        }
+        const progressPercent = (tabIndex / (totalTabs - 1)) * 100;
+        progressBar.style.width = `${progressPercent}%`;
     }
-    const progressPercent = (tabIndex / (totalTabs - 1)) * 100;
-    progressBar.style.width = `${progressPercent}%`;
-}
 
 
     // 탭 전환 (안전한 인덱스 처리)
     function changeTab(index) {
         // 인덱스 범위 검증
         const safeIndex = Math.max(0, Math.min(index, totalTabs - 1));
-        
+
         tabs.forEach(tab => tab.classList.remove('active'));
         tabContents.forEach(content => content.classList.remove('active'));
-        
+
         tabs[safeIndex].classList.add('active');
         tabContents[safeIndex].classList.add('active');
         currentTab = safeIndex;
-        
+
         updateProgressBar(safeIndex);
     }
 
