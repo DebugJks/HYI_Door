@@ -78,13 +78,28 @@ header {
     padding: 20px 0;
 }
 
-header .logo {
+/* header .logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: #cc0202;
     font-weight: bold;
+} */
+/* 기존 로고 텍스트 스타일 제거 또는 수정 */
+header .logo {
+    /* 기존 텍스트 스타일 제거 */
+    font-size: 0; /* 텍스트 숨기기 */
 }
 
+header .logo img {
+    height: 40px; /* 로고 높이 조정 */
+    width: auto; /* 비율 유지 */
+    transition: all 0.3s;
+}
+
+/* 필요시 hover 효과 추가 */
+header .logo img:hover {
+    opacity: 0.8;
+}
 header .logo span {
     color: #ff6b6b;
 }
@@ -112,6 +127,14 @@ header .mobile-menu-btn {
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    
+header .logo img {
+    height: 30px; /* 로고 높이 조정 */
+    width: auto; /* 비율 유지 */
+    transition: all 0.3s;
+}
+}
 /* 메인 비주얼 */
 .main-visual {
     background: url('../image/Banner.jpg') center/cover no-repeat;
