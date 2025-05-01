@@ -1020,7 +1020,7 @@ footer {
 
 
 .gallery-header::after {
-    content: '';
+    /* content: ''; */
     display: block;
     width: 80px;
     height: 4px;
@@ -1042,6 +1042,7 @@ footer {
     font-weight: 300;
     max-width: 700px;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* 갤러리 필터 */
