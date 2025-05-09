@@ -1,0 +1,40 @@
+<style>
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      height: 1000px;
+      overflow: hidden;
+    }
+  
+    .masked-iframe {
+      width: 1920px; /* 실제 페이지 크기보다 넓게 */
+      height: 2000px;
+      border: none;
+      transform: scale(1); /* 확대/축소 조절 */
+      transform-origin: top left;
+      position: absolute;
+      top: -250px; /* 배너 위쪽 숨기기 */
+      left: -180px; /* 좌측 여백 조절 */
+    }
+  
+    .cover-bottom-right {
+      position: absolute;
+      bottom: 50px;
+      right: 30px;
+      width: 250px;
+      height: 120px;
+      background: url('images/cover.png') no-repeat center center;
+      background-size: cover;
+      z-index: 10;
+      pointer-events: none; /* 클릭 못하게 */
+    }
+  </style>
+  
+
+
+
+  <iframe
+  src="https://www.yl.co.kr/product/category?pi_categoryCode=030100"
+  class="masked-iframe"
+  scrolling="no"
+></iframe>

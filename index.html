@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>한양도어</title>
+    <title>대양산업</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/indexStyle.css">
     <link rel="icon" href="image/파비콘.png" type="image/x-icon">
@@ -18,7 +18,7 @@
     <header>
         <div class="container header-container">
             <a href="index.html" class="logo">
-                <img src="image/Logo.png">
+                <!-- <img src="image/Logo.png"> -->
             </a>
             <nav id="mainNav">
                 <ul>
@@ -216,8 +216,6 @@
         </div>
     </div>
 
-
-
     <!-- <section class="marquee-section">
         <div class="marquee-wrapper">
             <div class="marquee">
@@ -254,7 +252,7 @@
     <!-- 추천 제품 섹션 -->
     <section class="recommend-section" style="margin-top: 5%;">
         <div class="rec-header">
-            <h2 class="rec-title">한양도어 PicK!</h2>
+            <h2 class="rec-title">대양산업 PicK!</h2>
             <div class="rec-tabs">
                 <button class="rec-tab active" data-tab="tab1">포켓 연동도어</button>
                 <button class="rec-tab" data-tab="tab2">슬라이드</button>
@@ -844,6 +842,344 @@
 
 
 
+<!--  제품 탭 섹션 -->
+<!-- 제품 탭5 섹션 -->
+<section class="product-tab5-section">
+    <!-- 탭5 메뉴 -->
+    <div class="tab5-menu">
+      <button class="tab5-btn active" data-tab5="tab5-1">실시간 TOP</button>
+      <button class="tab5-btn" data-tab5="tab5-2">주간 TOP</button>
+      <button class="tab5-btn" data-tab5="tab5-3">월간 TOP</button>
+    </div>
+  
+    <!-- 탭5 콘텐츠 래퍼 -->
+    <div class="tab5-content-wrapper">
+      <!-- 좌우 스크롤 화살표 -->
+      <button class="tab5-scroll-arrow tab5-left-arrow" onclick="scrollTab5Products(-1)">&#10094;</button>
+      
+      <!-- 탭5-1 콘텐츠 -->
+      <div class="tab5-content active" id="tab5-1">
+        <div class="tab5-product-slide">
+          <!-- 제품 카드 샘플 (6개) -->
+          <div class="tab5-product-card">
+            <div class="tab5-product-img">
+              <img src="image/products/abs1.jpg" alt="제품 이미지">
+            </div>
+            <div class="tab5-product-info">
+              <div class="tab5-product-title">
+                <span class="tab5-discount-rate">36%</span>
+                <span class="tab5-product-name">프리미엄 폴딩도어 시스템</span>
+              </div>
+              <p class="tab5-product-desc">공간 활용도 높은 폴딩도어로 실내외 경계를 아름답게 연출합니다. 다양한 색상과 사이즈 선택 가능</p>
+            </div>
+          </div>
+  
+          <div class="tab5-product-card">
+            <div class="tab5-product-img">
+              <img src="https://via.placeholder.com/180x150/f5f5f5/999999" alt="제품 이미지">
+            </div>
+            <div class="tab5-product-info">
+              <div class="tab5-product-title">
+                <span class="tab5-discount-rate">28%</span>
+                <span class="tab5-product-name">슬라이딩 창호 세트</span>
+              </div>
+              <p class="tab5-product-desc">부드러운 개폐가 가능한 고급형 슬라이딩 창호. 절충형 디자인으로 어떤 인테리어에도 잘 어울립니다.</p>
+            </div>
+          </div>
+  
+          <!-- 추가 제품 카드 4개 -->
+          <div class="tab5-product-card">
+            <div class="tab5-product-img">
+              <img src="https://via.placeholder.com/180x150/f5f5f5/999999" alt="제품 이미지">
+            </div>
+            <div class="tab5-product-info">
+              <div class="tab5-product-title">
+                <span class="tab5-discount-rate">45%</span>
+                <span class="tab5-product-name">듀얼글라스 창문</span>
+              </div>
+              <p class="tab5-product-desc">우수한 단열 효과를 자랑하는 듀얼글라스 창문. 에너지 효율을 높여줍니다.</p>
+            </div>
+          </div>
+  
+          <div class="tab5-product-card">
+            <div class="tab5-product-img">
+              <img src="https://via.placeholder.com/180x150/f5f5f5/999999" alt="제품 이미지">
+            </div>
+            <div class="tab5-product-info">
+              <div class="tab5-product-title">
+                <span class="tab5-discount-rate">19%</span>
+                <span class="tab5-product-name">베이직 도어</span>
+              </div>
+              <p class="tab5-product-desc">심플한 디자인의 베이직 도어. 합리적인 가격으로 기본에 충실한 제품입니다.</p>
+            </div>
+          </div>
+  
+          <div class="tab5-product-card">
+            <div class="tab5-product-img">
+              <img src="https://via.placeholder.com/180x150/f5f5f5/999999" alt="제품 이미지">
+            </div>
+            <div class="tab5-product-info">
+              <div class="tab5-product-title">
+                <span class="tab5-discount-rate">32%</span>
+                <span class="tab5-product-name">파티션 도어</span>
+              </div>
+              <p class="tab5-product-desc">공간 분리가 필요할 때 최적의 솔루션. 다양한 두께와 디자인 옵션 제공</p>
+            </div>
+          </div>
+  
+          <div class="tab5-product-card">
+            <div class="tab5-product-img">
+              <img src="https://via.placeholder.com/180x150/f5f5f5/999999" alt="제품 이미지">
+            </div>
+            <div class="tab5-product-info">
+              <div class="tab5-product-title">
+                <span class="tab5-discount-rate">15%</span>
+                <span class="tab5-product-name">미닫이 창문</span>
+              </div>
+              <p class="tab5-product-desc">전통적인 미닫이 방식의 창문. 클래식한 디자인을 원하는 분들에게 추천</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- 탭5-2 콘텐츠 (주간 TOP) -->
+      <div class="tab5-content" id="tab5-2">
+        <div class="tab5-product-slide">
+          <!-- 주간 TOP 제품들 -->
+        </div>
+      </div>
+  
+      <!-- 탭5-3 콘텐츠 (월간 TOP) -->
+      <div class="tab5-content" id="tab5-3">
+        <div class="tab5-product-slide">
+          <!-- 월간 TOP 제품들 -->
+        </div>
+      </div>
+  
+      <button class="tab5-scroll-arrow tab5-right-arrow" onclick="scrollTab5Products(1)">&#10095;</button>
+    </div>
+  </section>
+  
+  <style>
+  /* 전체 탭5 섹션 스타일 */
+  .product-tab5-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Malgun Gothic', Dotum, sans-serif;
+  }
+  
+  /* 탭5 메뉴 스타일 */
+  .tab5-menu {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  
+  .tab5-btn {
+    padding: 10px 24px;
+    background: #f8f8f8;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    color: #666;
+    transition: all 0.3s ease;
+  }
+  
+  .tab5-btn.active {
+    background: #2c3e50;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* 탭5 콘텐츠 래퍼 */
+  .tab5-content-wrapper {
+    position: relative;
+  }
+  
+  /* 제품 슬라이드 스타일 */
+  .tab5-product-slide {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .tab5-product-slide::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  
+  /* 제품 카드 스타일 */
+  .tab5-product-card {
+    width: 180px;
+    min-width: 180px;
+    height: 300px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }
+  
+  .tab5-product-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tab5-product-img {
+    height: 160px;
+    overflow: hidden;
+  }
+  
+  .tab5-product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .tab5-product-card:hover .tab5-product-img img {
+    transform: scale(1.05);
+  }
+  
+  .tab5-product-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tab5-product-title {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .tab5-discount-rate {
+    color: #e74c3c;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  
+  .tab5-product-name {
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .tab5-product-desc {
+    color: #7f8c8d;
+    font-size: 13px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    max-height: calc(1.4em * 3); /* 줄간격 × 3줄 계산 */
+
+  }
+  
+  /* 스크롤 화살표 스타일 */
+  .tab5-scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+    font-size: 20px;
+    color: #2c3e50;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+  }
+  
+  .tab5-scroll-arrow:hover {
+    background: #2c3e50;
+    color: white;
+  }
+  
+  .tab5-left-arrow {
+    left: -20px;
+  }
+  
+  .tab5-right-arrow {
+    right: -20px;
+  }
+  
+  /* 탭5 콘텐츠 전환 */
+  .tab5-content {
+    display: none;
+  }
+  
+  .tab5-content.active {
+    display: block;
+  }
+  </style>
+  
+  <script>
+  // 탭5 전환 기능
+  document.addEventListener('DOMContentLoaded', function() {
+    const tab5Btns = document.querySelectorAll('.tab5-btn');
+    
+    tab5Btns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // 모든 탭5 버튼 비활성화
+        tab5Btns.forEach(b => b.classList.remove('active'));
+        
+        // 현재 버튼 활성화
+        this.classList.add('active');
+        
+        // 모든 콘텐츠 숨기기
+        document.querySelectorAll('.tab5-content').forEach(content => {
+          content.classList.remove('active');
+        });
+        
+        // 해당 콘텐츠 보이기
+        const tab5Id = this.getAttribute('data-tab5');
+        document.getElementById(tab5Id).classList.add('active');
+      });
+    });
+  });
+  
+  // 탭5 제품 스크롤 기능
+  function scrollTab5Products(direction) {
+    const activeTab5 = document.querySelector('.tab5-content.active');
+    const slide = activeTab5 ? activeTab5.querySelector('.tab5-product-slide') : null;
+    
+    if (slide) {
+      const scrollAmount = 300;
+      slide.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
+  </script>
+
+
+
+
+
+
+
     <!-- 문의하기 -->
     <!-- 스프레드시트용 -->
     <section class="contact-section" style="margin-top: 10%; background: #f8fafc; padding: 3rem 0;">
@@ -1066,7 +1402,7 @@
 
     <section class="gallery-section" style="margin-bottom: 5%; margin-top: 5%;">
         <div class="gallery-header" id="doorGallery">
-            <h2 class="section-title" style="text-align: center; font-weight: bold;">한양도어 갤러리</h2>
+            <h2 class="section-title" style="text-align: center; font-weight: bold;">대양산업 갤러리</h2>
             <p class="section-subtitle">프리미엄 제품과 시공 사례를 확인해보세요. 최고의 품질과 디자인을 경험할 수 있습니다.</p>
         </div>
 
@@ -1349,7 +1685,7 @@ document.querySelectorAll('.contacts-option, .contacts-toggle').forEach(btn => {
                 </div>
             </div>
             <div class="copyright">
-                <p>© 2025 한양도어. All Rights Reserved.</p>
+                <p>© 2025 대양산업. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
